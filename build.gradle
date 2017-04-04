@@ -42,11 +42,11 @@ task runSearch(type: JavaExec) {
 task runIndexLocalSLocalFeat(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     // define where to find all the .so or .dll files needed
-    systemProperty "java.library.path", "/home/user/Documents/LIRE/LIREGit_latest/LIRE/samples/simpleapplication/lib"
+    systemProperty "java.library.path", "C:\\data\\dev\\lire\\lib"
 
     main = 'net.semanticmetadata.lire.sampleapp.IndexingAndSearchWithLocalFeatures'
 
     // Define the directory where to find the images to index.
-    //args '/home/user/Documents/images/'
+    args "C:\\data\\dev\\lire\\images"
 }
 
