@@ -2,6 +2,9 @@ apply plugin: 'java'
 
 repositories {
     mavenCentral()
+    maven {
+        url "http://www.dcm4che.org/maven2"
+    }
 }
 
 dependencies {
@@ -16,6 +19,7 @@ dependencies {
     // compile group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '2.4.11-0.11'
     compile fileTree(dir: 'lib', include: '*.jar')
     // runtime fileTree(dir: 'lib', include: '*.jar')
+    compile group: 'dcm4che', name: 'dcm4che-core', version: '2.0.29'
 }
 
 task runIndexing(type: JavaExec) {
