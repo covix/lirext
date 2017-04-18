@@ -57,6 +57,7 @@ import java.util.Arrays;
  */
 public class ExtractSingleFeature {
     public static void main(String[] args) {
+        System.out.println("hola");
         BufferedImage img = null;
         GlobalFeature f = null;
         for (int i = 0; i < args.length; i++) {
@@ -72,6 +73,7 @@ public class ExtractSingleFeature {
             } else if (arg.startsWith("-f")) {
                 // feature selection.
                 try {
+                    System.out.println(args[i + 1]);
                     f = (GlobalFeature) Class.forName(args[i + 1]).newInstance();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -79,12 +81,16 @@ public class ExtractSingleFeature {
                 }
             }
         }
+        System.out.println("fuck");
         if (img == null) printHelp();
         if (f == null) {
             f = new CEDD();
+            System.out.println("nullllll");
         }
+        System.out.println("stop");
         System.out.println("Extracting " + f.getClass().getName() + ".");
         f.extract(img);
+        System.out.println("hola2");
         System.out.printf(Arrays.toString(f.getFeatureVector()));
     }
 
