@@ -1,7 +1,5 @@
 package imageprocessing;
 
-import imageprocessing.Dcm4CheProcessor;
-
 import javax.swing.*;
 import java.applet.Applet;
 import java.awt.event.ActionEvent;
@@ -29,7 +27,7 @@ public class Main extends Applet {
     openButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent ae) {
         InputStream inputStream = null;
-        Dcm4CheProcessor imageProcessor;
+        DicomFeatureExtractor imageProcessor;
         try {
           JFileChooser chooser = new JFileChooser();
           int option = chooser.showOpenDialog(imageprocessing.Main.this);
@@ -41,8 +39,8 @@ public class Main extends Applet {
 
             /* Algorithm layer */
             inputStream = new FileInputStream(new File(fullpath));
-            imageProcessor = new Dcm4CheProcessor();
-            System.out.println(imageProcessor.extractInformation(inputStream) + "\n");
+            imageProcessor = new DicomFeatureExtractor();
+            System.out.println(imageProcessor.extractFeature(inputStream, 1048608) + "\n");
             /* Algorithm layer */
           }
         } catch (Exception exception) {
