@@ -40,6 +40,6 @@ public class CustomSearcher {
     Path indexPath = Paths.get("index");
     IndexReader indexReader = DirectoryReader.open(FSDirectory.open(indexPath));
 
-
+    //TODO: consider implementing this in the future
   }
 }
