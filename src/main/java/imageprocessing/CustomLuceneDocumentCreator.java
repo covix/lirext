@@ -14,6 +14,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Lucene document creator.
@@ -40,10 +42,14 @@ public class CustomLuceneDocumentCreator {
     Document document = globalDocumentBuilder.createDocument(img, imageFilePath);
 
     DicomFeatureExtractor dicomFeatureExtractor = new DicomFeatureExtractor();
-    String extractedFeature =
-            dicomFeatureExtractor.extractFeature(imageFilePath, DicomFeature.PATIENT_BIRTH_DATE);
+    Map<String, String> extractedFeatures =
+            dicomFeatureExtractor.extractFeatures(imageFilePath, DicomFeature.values());
+    for(String extractedFeatureKey : extractedFeatures.keySet()) {
+      StringField stringField =
+              new StringField(extractedFeatureKey, extractedFeatures.get(extractedFeatureKey), Field.Store.YES);
+      document.add(stringField);
+    }
 
-    document.add(new StringField(DicomFeature.PATIENT_BIRTH_DATE.name(), extractedFeature, Field.Store.YES));
     return document;
   }
 }
