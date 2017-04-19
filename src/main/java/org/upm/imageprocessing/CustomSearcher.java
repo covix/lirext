@@ -1,4 +1,4 @@
-package imageprocessing;
+package org.upm.imageprocessing;
 
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;

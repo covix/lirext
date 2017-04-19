@@ -1,4 +1,4 @@
-package imageprocessing;
+package org.upm.imageprocessing;
 
 /**
  * Created by Aleksandar on 19.04.2017.

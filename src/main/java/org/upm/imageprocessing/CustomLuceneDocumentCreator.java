@@ -1,4 +1,4 @@
-package imageprocessing;
+package org.upm.imageprocessing;
 
 import net.semanticmetadata.lire.builders.GlobalDocumentBuilder;
 import net.semanticmetadata.lire.imageanalysis.features.global.AutoColorCorrelogram;
@@ -14,7 +14,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 /**

@@ -1,13 +1,11 @@
-package imageprocessing;
+package org.upm.imageprocessing;
 
 import org.dcm4che2.data.DicomObject;
 import org.dcm4che2.io.DicomInputStream;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

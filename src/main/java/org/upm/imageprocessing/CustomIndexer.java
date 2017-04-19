@@ -1,4 +1,4 @@
-package imageprocessing;
+package org.upm.imageprocessing;
 
 import org.apache.commons.io.IOCase;
 import org.apache.commons.io.filefilter.IOFileFilter;
