@@ -1,6 +1,5 @@
 package imageprocessing;
 
-import net.semanticmetadata.lire.utils.FileUtils;
 import org.apache.commons.io.IOCase;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
