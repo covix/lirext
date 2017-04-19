@@ -25,10 +25,10 @@ dependencies {
 task runIndexing(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 
-    main = 'net.semanticmetadata.lire.sampleapp.ParallelIndexing'
+    main = 'imageprocessing.CustomIndexer'
 
     // Define the directory where to find the images to index.
-    args 'D:/Temp/twd'
+    args 'C:\\data\\dev\\lire\\images'
 }
 
 task runSearch(type: JavaExec) {
@@ -53,4 +53,16 @@ task runIndexLocalSLocalFeat(type: JavaExec) {
     // Define the directory where to find the images to index.
     args "C:\\data\\dev\\lire\\images"
 }
+
+/**
+ * Based on a suggestion by Nelson Silva from the lire-dev group.
+ */
+//task runExtractSingleFeature(type: JavaExec) {
+//    classpath = sourceSets.main.runtimeClasspath
+//
+//    main = 'net.semanticmetadata.lire.sampleapp.ExtractSingleFeature'
+//
+//    // Define the directory where to find the images to index.
+//    args "-f" "EdgeHistogram" "-i" "C:\\data\\dev\\lire\\images\\xray.png"
+//}
 
